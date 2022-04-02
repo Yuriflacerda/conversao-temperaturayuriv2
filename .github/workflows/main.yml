@@ -46,4 +46,4 @@ jobs:
         with:
           images: yurilacerda/conversao-temperaturayuriv2:${{ github.run_number}}
           manifests: |
-            k8s/pod.yaml
+            k8s/deployment.yaml
