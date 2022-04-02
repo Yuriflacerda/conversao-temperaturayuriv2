@@ -25,8 +25,8 @@ jobs:
           file: ./src/Dockerfile
           push: true
           tags: |
-            yurilacerda/conversao-temperaturayuri:latest
-            yurilacerda/conversao-temperaturayuri:${{ github.run_number}}
+            yurilacerda/conversao-temperaturayuriv2:latest
+            yurilacerda/conversao-temperaturayuriv2:${{ github.run_number}}
             
   CD:
     needs: [CI]
@@ -44,6 +44,6 @@ jobs:
       - name: Deploy to Kubernetes cluster
         uses: Azure/k8s-deploy@v3.0
         with:
-          images: yurilacerda/conversao-temperaturayuri:${{ github.run_number}}
+          images: yurilacerda/conversao-temperaturayuriv2:${{ github.run_number}}
           manifests: |
             k8s/pod.yaml
